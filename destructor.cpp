@@ -15,6 +15,7 @@ public:
         *cgpaptr = cgpa;
         // this->cgpa = cgpa;
     }
+
     /* Destructor */
     ~student()
     {
