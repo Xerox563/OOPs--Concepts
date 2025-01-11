@@ -26,7 +26,7 @@ Example: If a class is a blueprint of a house, an object is an actual house buil
  */
 
 /*
- * OOP allows encapsulation, meaning data (attributes) and methods (functions) are bundled together in a class. 
+ * OOP allows encapsulation, meaning data (attributes) and methods (functions) are bundled together in a class.
  * OOP allows you to represent real-world entities (like cars, animals, or students) in your code.
  * OOP promotes code reuse through inheritance, where one class can inherit properties and behaviors of another class.
  * OOP organizes code into classes, making it modular. This makes it easier to:
@@ -36,4 +36,52 @@ Example: If a class is a blueprint of a house, an object is an actual house buil
      -> Why it matters: Changes in one part of the code don't affect other parts, reducing the risk of breaking the system.
  * In OOP, different developers can work on different objects or classes independently.
 
+
+  * Access Modifiers
+   -> Private -> Data & Methods that are accessible inside the class.
+   -> Public -> Data & Methods that are accessible to everyone.
+   -> Protected -> Data & Methods accessible inside the class & to its derived class.
  */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Teacher
+{
+    float salary;
+
+public:
+    // properties / attributes
+    string name;
+    string dept;
+    string subject;
+
+    // methods / member functions
+
+    void changeDept(string d)
+    {
+        dept = d;
+    }
+
+    // setter -> Private Values ko set Karna
+    void setSalary(float s)
+    {
+        salary = s;
+    }
+    // getter -> Private Values ko get Karna
+    float getSalary()
+    {
+        return salary;
+    }
+};
+int main()
+{
+    Teacher t1;
+    t1.name = "Amit";
+    t1.subject = "Maths";
+    // t1.salary = 2500.78; (private)
+    t1.setSalary(35000.89);
+    cout << t1.getSalary() << endl;
+    t1.dept = "CS";
+    return 0;
+}
